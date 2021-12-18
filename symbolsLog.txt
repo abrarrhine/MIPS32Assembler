@@ -1,0 +1,86 @@
+Details from symbol table generation tests:
+
+Sorted symbol table for ftest01.asm:
+0x00000000  main
+0x00002000  val01
+0x00002004  val02
+
+Comparing sortedsyms01.txt to ./symtabs/refsyms01.txt:
+
+Checking: 0x00000000  main
+  That looked OK.
+Checking: 0x00002000  val01
+  That looked OK.
+Checking: 0x00002004  val02
+  That looked OK.
+ 11 >>  sortedsyms01.txt symbols: 3 / 3
+
+Sorted symbol table for ftest04.asm:
+0x0000002C  end
+0x00000004  loop1
+0x00000014  loop2
+0x00000020  loop3
+0x00000000  main
+0x00002000  num01
+0x00000008  tst1
+0x00000028  tst2
+0x00000024  tst3
+
+Comparing sortedsyms04.txt to ./symtabs/refsyms04.txt:
+
+Checking: 0x0000002C  end
+  That looked OK.
+Checking: 0x00000004  loop1
+  That looked OK.
+Checking: 0x00000014  loop2
+  That looked OK.
+Checking: 0x00000020  loop3
+  That looked OK.
+Checking: 0x00000000  main
+  That looked OK.
+Checking: 0x00002000  num01
+  That looked OK.
+Checking: 0x00000008  tst1
+  That looked OK.
+Checking: 0x00000028  tst2
+  That looked OK.
+Checking: 0x00000024  tst3
+  That looked OK.
+ 12 >>  sortedsyms04.txt symbols: 9 / 9
+
+Sorted symbol table for ftest07.asm:
+0x00000000  main
+0x00002000  str01
+0x00002008  str02
+0x00002018  str03
+0x00002020  str04
+0x00002024  str05
+0x00002004  val01
+0x00002014  val02
+0x0000201C  val03
+0x00002038  val04
+
+Comparing sortedsyms07.txt to ./symtabs/refsyms07.txt:
+
+Checking: 0x00000000  main
+  That looked OK.
+Checking: 0x00002000  str01
+  That looked OK.
+Checking: 0x00002008  str02
+  That looked OK.
+Checking: 0x00002018  str03
+  That looked OK.
+Checking: 0x00002020  str04
+  That looked OK.
+Checking: 0x00002024  str05
+  That looked OK.
+Checking: 0x00002004  val01
+  That looked OK.
+Checking: 0x00002014  val02
+  That looked OK.
+Checking: 0x0000201C  val03
+  That looked OK.
+Checking: 0x00002038  val04
+  That looked OK.
+ 13 >>  sortedsyms07.txt symbols: 10 / 10
+

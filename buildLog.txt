@@ -1,0 +1,80 @@
+Executing grade.sh...
+
+Creating build subdirectory
+
+Extracting student's files to the build directory:
+assembler.c
+assembler.h
+Function.c
+Function.h
+Label.c
+Label.h
+Opcode.c
+Opcode.h
+Register.c
+Register.h
+pledge.txt
+makefile
+
+Invoking:  make assembler
+gcc -c -std=c11 -Wall -W -ggdb3 assembler.c
+In file included from assembler.c:26:
+Label.h:34:61: warning: duplicate ‘const’ declaration specifier [-Wduplicate-decl-specifier]
+ void InsertLabel(const char *const LabelName, const int16_t const Offset);
+                                                             ^~~~~
+assembler.c: In function ‘main’:
+assembler.c:58:14: warning: implicit declaration of function ‘getline’; did you mean ‘getenv’? [-Wimplicit-function-declaration]
+   line_len = getline(&line_buf, &buf_size, In);
+              ^~~~~~~
+              getenv
+assembler.c: In function ‘parseInstruction’:
+assembler.c:178:18: warning: format ‘%i’ expects argument of type ‘int *’, but argument 4 has type ‘int16_t *’ {aka ‘short int *’} [-Wformat=]
+   sscanf(pInstr, "%*s %[^,], %" PRIi16 "", rt, &imm);
+                  ^~~~~~~~~~~~~~                ~~~~
+In file included from Register.h:25,
+                 from assembler.c:22:
+/usr/include/inttypes.h:71:19: note: format string is defined here
+ # define PRIi16  "i"
+assembler.c:228:33: warning: format ‘%i’ expects argument of type ‘int *’, but argument 3 has type ‘int8_t *’ {aka ‘signed char *’} [-Wformat=]
+     int isNumber = sscanf(arg3, "%" PRIi8 "", &imm);
+                                 ^~~           ~~~~
+In file included from Register.h:25,
+                 from assembler.c:22:
+/usr/include/inttypes.h:70:18: note: format string is defined here
+ # define PRIi8  "i"
+assembler.c:273:33: warning: format ‘%i’ expects argument of type ‘int *’, but argument 3 has type ‘int16_t *’ {aka ‘short int *’} [-Wformat=]
+     int isNumber = sscanf(arg3, "%" PRIi16 "", &imm);
+                                 ^~~            ~~~~
+In file included from Register.h:25,
+                 from assembler.c:22:
+/usr/include/inttypes.h:71:19: note: format string is defined here
+ # define PRIi16  "i"
+assembler.c:292:33: warning: format ‘%i’ expects argument of type ‘int *’, but argument 3 has type ‘int16_t *’ {aka ‘short int *’} [-Wformat=]
+     int isNumber = sscanf(arg2, "%" PRIi16 "", &imm);
+                                 ^~~            ~~~~
+In file included from Register.h:25,
+                 from assembler.c:22:
+/usr/include/inttypes.h:71:19: note: format string is defined here
+ # define PRIi16  "i"
+assembler.c: In function ‘FillLabels’:
+assembler.c:591:25: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+       for (int i = 0; i < len; i++)
+                         ^
+gcc -c -std=c11 -Wall -W -ggdb3 Function.c
+gcc -c -std=c11 -Wall -W -ggdb3 Opcode.c
+gcc -c -std=c11 -Wall -W -ggdb3 Register.c
+gcc -c -std=c11 -Wall -W -ggdb3 Label.c
+In file included from Label.c:22:
+Label.h:34:61: warning: duplicate ‘const’ declaration specifier [-Wduplicate-decl-specifier]
+ void InsertLabel(const char *const LabelName, const int16_t const Offset);
+                                                             ^~~~~
+Label.c:57:61: warning: duplicate ‘const’ declaration specifier [-Wduplicate-decl-specifier]
+ void InsertLabel(const char *const LabelName, const int16_t const Offset)
+                                                             ^~~~~
+Label.c: In function ‘InsertLabel’:
+Label.c:62:19: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   next->LabelName = LabelName;
+                   ^
+gcc -o assemble -std=c11 -Wall -W -ggdb3 assembler.o Function.o Opcode.o Register.o Label.o
+
+============================================================

@@ -1,0 +1,660 @@
+Grading:  mipsassembler.tar
+Time:     Sat Dec 18 04:16:34 EST 2021
+Option:   -final
+
+>>Scores from testing<<
+  1 >> Score for final/ftest01.o: 12.00 / 12.00
+  2 >> Score for final/ftest02.o: 17.00 / 17.00
+  3 >> Score for final/ftest03.o: 10.00 / 10.00
+  4 >> Score for final/ftest04.o: 14.00 / 14.00
+  5 >> Score for final/ftest05.o: 22.00 / 22.00
+  6 >> Score for final/ftest06.o: 20.00 / 20.00
+  7 >> Score for final/ftest07.o: 22.00 / 22.00
+  8 >> Score for final/ftest08.o: 11.00 / 11.00
+  9 >> Score for final/ftest09.o: 30.00 / 30.00
+ 10 >> Score for final/ftest10.o: 60.00 / 60.00
+ 11 >>  sortedsyms01.txt symbols: 3 / 3
+ 12 >>  sortedsyms04.txt symbols: 9 / 9
+ 13 >>  sortedsyms07.txt symbols: 10 / 10
+============================================================
+
+Valgrind issues:
+==902281==     in use at exit: 0 bytes in 0 blocks
+==902281==   total heap usage: 263 allocs, 263 frees, 51,710 bytes allocated
+Invalid reads: 0
+Invalid writes: 0
+Uses of uninitialized values: 0
+============================================================
+Details from symbol table generation tests:
+
+Sorted symbol table for ftest01.asm:
+0x00000000  main
+0x00002000  val01
+0x00002004  val02
+
+Comparing sortedsyms01.txt to ./symtabs/refsyms01.txt:
+
+Checking: 0x00000000  main
+  That looked OK.
+Checking: 0x00002000  val01
+  That looked OK.
+Checking: 0x00002004  val02
+  That looked OK.
+ 11 >>  sortedsyms01.txt symbols: 3 / 3
+
+Sorted symbol table for ftest04.asm:
+0x0000002C  end
+0x00000004  loop1
+0x00000014  loop2
+0x00000020  loop3
+0x00000000  main
+0x00002000  num01
+0x00000008  tst1
+0x00000028  tst2
+0x00000024  tst3
+
+Comparing sortedsyms04.txt to ./symtabs/refsyms04.txt:
+
+Checking: 0x0000002C  end
+  That looked OK.
+Checking: 0x00000004  loop1
+  That looked OK.
+Checking: 0x00000014  loop2
+  That looked OK.
+Checking: 0x00000020  loop3
+  That looked OK.
+Checking: 0x00000000  main
+  That looked OK.
+Checking: 0x00002000  num01
+  That looked OK.
+Checking: 0x00000008  tst1
+  That looked OK.
+Checking: 0x00000028  tst2
+  That looked OK.
+Checking: 0x00000024  tst3
+  That looked OK.
+ 12 >>  sortedsyms04.txt symbols: 9 / 9
+
+Sorted symbol table for ftest07.asm:
+0x00000000  main
+0x00002000  str01
+0x00002008  str02
+0x00002018  str03
+0x00002020  str04
+0x00002024  str05
+0x00002004  val01
+0x00002014  val02
+0x0000201C  val03
+0x00002038  val04
+
+Comparing sortedsyms07.txt to ./symtabs/refsyms07.txt:
+
+Checking: 0x00000000  main
+  That looked OK.
+Checking: 0x00002000  str01
+  That looked OK.
+Checking: 0x00002008  str02
+  That looked OK.
+Checking: 0x00002018  str03
+  That looked OK.
+Checking: 0x00002020  str04
+  That looked OK.
+Checking: 0x00002024  str05
+  That looked OK.
+Checking: 0x00002004  val01
+  That looked OK.
+Checking: 0x00002014  val02
+  That looked OK.
+Checking: 0x0000201C  val03
+  That looked OK.
+Checking: 0x00002038  val04
+  That looked OK.
+ 13 >>  sortedsyms07.txt symbols: 10 / 10
+
+============================================================
+Begin running test cases...
+
+Beginning test case 1
+Running assembler on final/ftest01.asm
+Running compare on fstu01.o and final/ftest01.o
+Comparing fstu01.o to final/ftest01.o:
+
+  0:          00000010001100101000000000100000
+  1:          00000010111000101011000000100111
+  2:          00000001000010010001100000100001
+  3:          00000001011011000101000000101010
+  4:          00000001110011110110100000100010
+  5:          01110011010110110000100000000010
+  6:          00000000000110011100001111000011
+  7:          00000000000001010010010111000000
+  8:          00000001111100110000000000011000
+  9:          
+ 10:          00000000000000001111111111111111
+ 11:          11111111110000001110101100000111
+
+ 12 lines in reference file
+ 12 lines in student file
+ 12 correct lines in student file
+
+  1 >> Score for final/ftest01.o: 12.00 / 12.00
+
+Beginning test case 2
+Running assembler on final/ftest02.asm
+Running compare on fstu02.o and final/ftest02.o
+Comparing fstu02.o to final/ftest02.o:
+
+  0:          00010001000010010000000000000001
+  1:          00100010001100001110000101110001
+  2:          00010101010010110000000000000010
+  3:          00000010111000101011000000100111
+  4:          00001000000000000000000000000110
+  5:          00000001000010010001100000100000
+  6:          00011010001000000000000000000010
+  7:          00000001011011000101000000101010
+  8:          00001000000000000000000000001101
+  9:          00011110011000000000000000000010
+ 10:          00000001110011110110100000100010
+ 11:          00001000000000000000000000001101
+ 12:          01110011010110110000100000000010
+ 13:          00000000000001010010010111000000
+ 14:          00000000000000000000000000001100
+ 15:          
+ 16:          00000000000000000000000000000000
+
+ 17 lines in reference file
+ 17 lines in student file
+ 17 correct lines in student file
+
+  2 >> Score for final/ftest02.o: 17.00 / 17.00
+
+Beginning test case 3
+Running assembler on final/ftest03.asm
+Running compare on fstu03.o and final/ftest03.o
+Comparing fstu03.o to final/ftest03.o:
+
+  0:          00100110001100001110110101111110
+  1:          00010001000010011111111111111110
+  2:          00000000000100101001110000000000
+  3:          00000001000101110001000000000111
+  4:          00000010100101011001100000100010
+  5:          00011110110000001111111111111110
+  6:          00010101010010111111111111111100
+  7:          00001000000000000000000000000000
+  8:          
+  9:          00000000000000011000101010010010
+
+ 10 lines in reference file
+ 10 lines in student file
+ 10 correct lines in student file
+
+  3 >> Score for final/ftest03.o: 10.00 / 10.00
+
+Beginning test case 4
+Running assembler on final/ftest04.asm
+Running compare on fstu04.o and final/ftest04.o
+Comparing fstu04.o to final/ftest04.o:
+
+  0:          00001000000000000000000000000010
+  1:          00100010001100000001100000010101
+  2:          00010001000010011111111111111110
+  3:          00011001000000000000000000000111
+  4:          00001000000000000000000000001010
+  5:          00101010111101101111111100111001
+  6:          00000000000000000000000000000000
+  7:          00001000000000000000000000001001
+  8:          00111100000010000000111111111111
+  9:          00011110110000001111111111111110
+ 10:          00010101010010111111111111111010
+ 11:          00001000000000000000000000000000
+ 12:          
+ 13:          00000000001011100011100110001111
+
+ 14 lines in reference file
+ 14 lines in student file
+ 14 correct lines in student file
+
+  4 >> Score for final/ftest04.o: 14.00 / 14.00
+
+Beginning test case 5
+Running assembler on final/ftest05.asm
+Running compare on fstu05.o and final/ftest05.o
+Comparing fstu05.o to final/ftest05.o:
+
+  0:          00100000000010000010000000000000
+  1:          00100000000010010010000000000100
+  2:          10001101000100000000000000000000
+  3:          10001101001100010000000000000000
+  4:          10001101001100011111111111111100
+  5:          10001101000100010000000000001000
+  6:          10001101001100011111111111110011
+  7:          00111100000100110011100110111111
+  8:          00100010011100111111111111111111
+  9:          00000000000000000000000000000000
+ 10:          00101010011100100000000000000000
+ 11:          00100000000010000010000000010000
+ 12:          00100100000100110111000011111011
+ 13:          10101101000100110001000011100001
+ 14:          10101101000100111111111111111000
+ 15:          00000000000000000000000000001100
+ 16:          
+ 17:          00000000000000000000000000000000
+ 18:          00000000000000000000000000010111
+ 19:          11111111111111111111111111100001
+ 20:          00000000000000000000011111111111
+ 21:          11111111111111111110000001011100
+
+ 22 lines in reference file
+ 22 lines in student file
+ 22 correct lines in student file
+
+  5 >> Score for final/ftest05.o: 22.00 / 22.00
+
+Beginning test case 6
+Running assembler on final/ftest06.asm
+Running compare on fstu06.o and final/ftest06.o
+Comparing fstu06.o to final/ftest06.o:
+
+  0:          00100000000010000010000000000000
+  1:          10001101000100000000000000000000
+  2:          
+  3:          01100001011000100110001100000000
+  4:          01100010011000010110001101101011
+  5:          00000000011101000110111100000000
+  6:          01100101011011100110010000000000
+  7:          01000001011100110111001101100101
+  8:          01101101011000100110110001101001
+  9:          01101110011001110010000001101101
+ 10:          01100001011000110110100001101001
+ 11:          01101110011001010010000001100011
+ 12:          01101111011001000110010100100000
+ 13:          01101001011100110010000001100110
+ 14:          01110101011011100010110000100000
+ 15:          01100001011011100110010000100000
+ 16:          01100111011011110110111101100100
+ 17:          00100000011001100110111101110010
+ 18:          00100000011110010110111101110101
+ 19:          00100001000000000000000000000000
+
+ 20 lines in reference file
+ 20 lines in student file
+ 20 correct lines in student file
+
+  6 >> Score for final/ftest06.o: 20.00 / 20.00
+
+Beginning test case 7
+Running assembler on final/ftest07.asm
+Running compare on fstu07.o and final/ftest07.o
+Comparing fstu07.o to final/ftest07.o:
+
+  0:          00100000000010000010000000000100
+  1:          00100000000010010010000000010100
+  2:          00100000000010100010000000011100
+  3:          10001101000100000000000000000000
+  4:          10001101001100010000000000000100
+  5:          10101101011100001111111111011000
+  6:          
+  7:          01100001011000100110001100000000
+  8:          00000000000011001100111001111101
+  9:          01100010011000010110001101101011
+ 10:          01110111011000010111001001100100
+ 11:          00000000000000000000000000000000
+ 12:          11111111111100110011000110000011
+ 13:          01110100011011110000000000000000
+ 14:          00000000000011011100101011110011
+ 15:          01100101011011100110010000000000
+ 16:          01010000011011110110100101101110
+ 17:          01110100011001010111001001110011
+ 18:          00100000011000010111001001100101
+ 19:          00100000011001100111010101101110
+ 20:          00100001000000000000000000000000
+ 21:          00000000001011111110000100010110
+
+ 22 lines in reference file
+ 22 lines in student file
+ 22 correct lines in student file
+
+  7 >> Score for final/ftest07.o: 22.00 / 22.00
+
+Beginning test case 8
+Running assembler on final/ftest08.asm
+Running compare on fstu08.o and final/ftest08.o
+Comparing fstu08.o to final/ftest08.o:
+
+  0:          10001100000011110010000000000000
+  1:          10001100000110000010000000000100
+  2:          00100100000011110101101101111101
+  3:          00000011000011110000100000101010
+  4:          00010100001000000000000000000010
+  5:          00100100000110011000110101110111
+  6:          00000000000110011100000000100001
+  7:          00000000000000000000000000001100
+  8:          
+  9:          00000000000011001100111001111101
+ 10:          00000000000011011100101011110011
+
+ 11 lines in reference file
+ 11 lines in student file
+ 11 correct lines in student file
+
+  8 >> Score for final/ftest08.o: 11.00 / 11.00
+
+Beginning test case 9
+Running assembler on final/ftest09.asm
+Running compare on fstu09.o and final/ftest09.o
+Comparing fstu09.o to final/ftest09.o:
+
+  0:          00100000000010000010000000000100
+  1:          10001100000100010010000000000000
+  2:          10001101000100100000000000001000
+  3:          00100000000010010010000000011000
+  4:          10001100000100110010000000010100
+  5:          10101101000100010000000000011000
+  6:          10101101000100100000000000011000
+  7:          
+  8:          00000000000000000000000000000100
+  9:          11111111111111111111111111111111
+ 10:          11111111111111111111111111111111
+ 11:          11111111111111111111111111111111
+ 12:          11111111111111111111111111111111
+ 13:          00000000000000000000000000010001
+ 14:          00000000000000000000000000000010
+ 15:          00000000000000000000000000000011
+ 16:          00000000000000000000000000000101
+ 17:          00000000000000000000000000000111
+ 18:          00000000000000000000000000001011
+ 19:          00000000000000000000000000001101
+ 20:          00000000000000000000000000010001
+ 21:          00000000000000000000000000010011
+ 22:          00000000000000000000000000010111
+ 23:          00000000000000000000000000011101
+ 24:          00000000000000000000000000011111
+ 25:          00000000000000000000000000100101
+ 26:          00000000000000000000000000101001
+ 27:          00000000000000000000000000101011
+ 28:          00000000000000000000000000101111
+ 29:          00000000000000000000000000110011
+
+ 30 lines in reference file
+ 30 lines in student file
+ 30 correct lines in student file
+
+  9 >> Score for final/ftest09.o: 30.00 / 30.00
+
+Beginning test case 10
+Running assembler on final/ftest10.asm
+Running compare on fstu10.o and final/ftest10.o
+Comparing fstu10.o to final/ftest10.o:
+
+  0:          00100000000010000010000000100100
+  1:          10001100000010010010000000000000
+  2:          10101101001010010000000000000100
+  3:          00111100000010011111111111111111
+  4:          00000001010010110110000000100000
+  5:          00100010000100000111100111101110
+  6:          00000010001100101000100000100001
+  7:          00100110010100101000011000010010
+  8:          01110010100101011001100000000010
+  9:          00000010011101000000000000011000
+ 10:          01110001111110010110000000000010
+ 11:          00000000000000000000000000000000
+ 12:          00000001110110000101100000100111
+ 13:          00000000000100101001011111000000
+ 14:          00000010010100110101100000101010
+ 15:          00101010010010111010110000000111
+ 16:          00000000000100011000010001000011
+ 17:          00000010000100101011100000000111
+ 18:          00000000000100010100000000100010
+ 19:          00010001001001001111111111110000
+ 20:          00011001011000001111111111110101
+ 21:          00011110111000001111111111111010
+ 22:          00010110101000001111111111110011
+ 23:          00001000000000000000000000000100
+ 24:          00000000000100110101100000100001
+ 25:          00000001000010010000100000101010
+ 26:          00010100001000001111111111111101
+ 27:          00100100000010111110111111100101
+ 28:          00000000000000000000000000001100
+ 29:          00100000000010110010000000001000
+ 30:          00100000000010110010000000010000
+ 31:          00100000000010110010000000011000
+ 32:          00100000000010110010000000111100
+ 33:          00100000000010110010000001010100
+ 34:          
+ 35:          00000000110110101001000110101111
+ 36:          01100001000000000000000000000000
+ 37:          11111111111110110001000010010110
+ 38:          01100001011000100000000000000000
+ 39:          00000000000011010101001010100100
+ 40:          01100001011000100110001100000000
+ 41:          11111111111010111000000011110111
+ 42:          01100001011000100110001101100100
+ 43:          00000000000000000000000000000000
+ 44:          00000000000000000000000000010111
+ 45:          00000000000000000000000000010111
+ 46:          00000000000000000000000000010111
+ 47:          00000000000000000000000000010111
+ 48:          00000000000000000000000000010111
+ 49:          00000000000000000000000000010111
+ 50:          01001000011011110111011100100000
+ 51:          01100100011010010110010000100000
+ 52:          01110100011010000110000101110100
+ 53:          00100000011011110110111001100101
+ 54:          00100000011001110110111100111111
+ 55:          00000000000000000000000000000000
+ 56:          00000000000000000000000000000110
+ 57:          00000000000000000000000000011100
+ 58:          00000000000000000000000111110000
+ 59:          00000000000000000001111111000000
+
+ 60 lines in reference file
+ 60 lines in student file
+ 60 correct lines in student file
+
+ 10 >> Score for final/ftest10.o: 60.00 / 60.00
+
+============================================================
+==902281== Memcheck, a memory error detector
+==902281== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==902281== Using Valgrind-3.18.1-42b08ed5bd-20211015 and LibVEX; rerun with -h for copyright info
+==902281== Command: ./assemble ./final/ftest07.asm ./fstu07.o
+==902281== Parent PID: 902280
+==902281== 
+--902281-- 
+--902281-- Valgrind options:
+--902281--    --leak-check=full
+--902281--    --show-leak-kinds=all
+--902281--    --log-file=vgrindLog.txt
+--902281--    --track-origins=yes
+--902281--    -v
+--902281-- Contents of /proc/version:
+--902281--   Linux version 4.18.0-348.2.1.el8_5.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 8.5.0 20210514 (Red Hat 8.5.0-4) (GCC)) #1 SMP Tue Nov 16 14:42:35 UTC 2021
+--902281-- 
+--902281-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand-rdseed
+--902281-- Page sizes: currently 4096, max supported 4096
+--902281-- Valgrind library directory: /usr/libexec/valgrind
+--902281-- Reading syms from /home/ugrads/majors/abrarr18/MIPS32Assembler/assemble
+--902281-- Reading syms from /usr/lib64/ld-2.28.so
+--902281-- Reading syms from /usr/libexec/valgrind/memcheck-amd64-linux
+--902281--    object doesn't have a symbol table
+--902281--    object doesn't have a dynamic symbol table
+--902281-- Scheduler: using generic scheduler lock implementation.
+--902281-- Reading suppressions file: /usr/libexec/valgrind/default.supp
+==902281== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-902281-by-abrarr18-on-chestnut.rlogin
+==902281== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-902281-by-abrarr18-on-chestnut.rlogin
+==902281== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-902281-by-abrarr18-on-chestnut.rlogin
+==902281== 
+==902281== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==902281== don't want to do, unless you know exactly what you're doing,
+==902281== or are doing some strange experiment):
+==902281==   /usr/libexec/valgrind/../../bin/vgdb --pid=902281 ...command...
+==902281== 
+==902281== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==902281==   /path/to/gdb ./assemble
+==902281== and then give GDB the following command
+==902281==   target remote | /usr/libexec/valgrind/../../bin/vgdb --pid=902281
+==902281== --pid is optional if only one valgrind process is running
+==902281== 
+--902281-- REDIR: 0x4005870 (ld-linux-x86-64.so.2:strlen) redirected to 0x580d0482 (???)
+--902281-- REDIR: 0x4005640 (ld-linux-x86-64.so.2:index) redirected to 0x580d049c (???)
+--902281-- Reading syms from /usr/libexec/valgrind/vgpreload_core-amd64-linux.so
+--902281-- Reading syms from /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+==902281== WARNING: new redirection conflicts with existing -- ignoring it
+--902281--     old: 0x04005870 (strlen              ) R-> (0000.0) 0x580d0482 ???
+--902281--     new: 0x04005870 (strlen              ) R-> (2007.0) 0x04c3b170 strlen
+--902281-- REDIR: 0x4002050 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c3c250 (strcmp)
+--902281-- REDIR: 0x4005dd0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c40180 (mempcpy)
+--902281-- Reading syms from /usr/lib64/libc-2.28.so
+==902281== WARNING: new redirection conflicts with existing -- ignoring it
+--902281--     old: 0x04ee2360 (memalign            ) R-> (1011.0) 0x04c3a3e2 memalign
+--902281--     new: 0x04ee2360 (memalign            ) R-> (1017.0) 0x04c3a3b5 aligned_alloc
+==902281== WARNING: new redirection conflicts with existing -- ignoring it
+--902281--     old: 0x04ee2360 (memalign            ) R-> (1011.0) 0x04c3a3e2 memalign
+--902281--     new: 0x04ee2360 (memalign            ) R-> (1017.0) 0x04c3a388 aligned_alloc
+==902281== WARNING: new redirection conflicts with existing -- ignoring it
+--902281--     old: 0x04ee2360 (memalign            ) R-> (1011.0) 0x04c3a3e2 memalign
+--902281--     new: 0x04ee2360 (memalign            ) R-> (1017.0) 0x04c3a3b5 aligned_alloc
+==902281== WARNING: new redirection conflicts with existing -- ignoring it
+--902281--     old: 0x04ee2360 (memalign            ) R-> (1011.0) 0x04c3a3e2 memalign
+--902281--     new: 0x04ee2360 (memalign            ) R-> (1017.0) 0x04c3a388 aligned_alloc
+--902281-- REDIR: 0x4ee65e0 (libc.so.6:memmove) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+==902281== Preferring higher priority redirection:
+--902281--     old: 0x04f14c90 (__memcpy_avx_unalign) R-> (2018.0) 0x04c3d690 __memcpy_avx_unaligned_erms
+--902281--     new: 0x04f14c90 (__memcpy_avx_unalign) R-> (2018.1) 0x04c3f1c0 memmove
+--902281-- REDIR: 0x4ee58f0 (libc.so.6:strncpy) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee6910 (libc.so.6:strcasecmp) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee5200 (libc.so.6:strcat) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee5950 (libc.so.6:rindex) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee7f40 (libc.so.6:rawmemchr) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4f1db20 (libc.so.6:wmemchr) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4f1d540 (libc.so.6:wcscmp) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee6740 (libc.so.6:mempcpy) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee6570 (libc.so.6:bcmp) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee5880 (libc.so.6:strncmp) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee52b0 (libc.so.6:strcmp) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee66b0 (libc.so.6:memset) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4f1d500 (libc.so.6:wcschr) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee57e0 (libc.so.6:strnlen) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee5390 (libc.so.6:strcspn) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee6960 (libc.so.6:strncasecmp) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee5330 (libc.so.6:strcpy) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee6ab0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4f1ee20 (libc.so.6:wcsnlen) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee5990 (libc.so.6:strpbrk) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee5260 (libc.so.6:index) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee57a0 (libc.so.6:strlen) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4eeca20 (libc.so.6:memrchr) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee69b0 (libc.so.6:strcasecmp_l) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee6530 (libc.so.6:memchr) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4f1d650 (libc.so.6:wcslen) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee5c50 (libc.so.6:strspn) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee68b0 (libc.so.6:stpncpy) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee6850 (libc.so.6:stpcpy) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee7f80 (libc.so.6:strchrnul) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4ee6a00 (libc.so.6:strncasecmp_l) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4f11ab0 (libc.so.6:__strrchr_avx2) redirected to 0x4c3ab00 (rindex)
+--902281-- REDIR: 0x4ee1660 (libc.so.6:malloc) redirected to 0x4c350bf (malloc)
+--902281-- REDIR: 0x4ee6160 (libc.so.6:__GI_strstr) redirected to 0x4c403e0 (__strstr_sse2)
+--902281-- REDIR: 0x4ee2420 (libc.so.6:calloc) redirected to 0x4c39dc1 (calloc)
+--902281-- REDIR: 0x4f0dae0 (libc.so.6:__memchr_avx2) redirected to 0x4c3c2f0 (memchr)
+--902281-- REDIR: 0x4f14c90 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x4c3f1c0 (memmove)
+--902281-- REDIR: 0x4f11690 (libc.so.6:__strchr_avx2) redirected to 0x4c3ace0 (index)
+--902281-- REDIR: 0x4ee1cb0 (libc.so.6:free) redirected to 0x4c37a21 (free)
+--902281-- REDIR: 0x4f0ddb0 (libc.so.6:__rawmemchr_avx2) redirected to 0x4c3fce0 (rawmemchr)
+--902281-- REDIR: 0x4f11c80 (libc.so.6:__strlen_avx2) redirected to 0x4c3b050 (strlen)
+--902281-- REDIR: 0x4f0d5b0 (libc.so.6:__strncmp_avx2) redirected to 0x4c3b800 (strncmp)
+--902281-- REDIR: 0x4ee1f10 (libc.so.6:realloc) redirected to 0x4c3a00e (realloc)
+--902281-- REDIR: 0x4ee5820 (libc.so.6:strncat) redirected to 0x4a2e77b (_vgnU_ifunc_wrapper)
+--902281-- REDIR: 0x4f127b0 (libc.so.6:__strncat_avx2) redirected to 0x4c3aed0 (strncat)
+--902281-- REDIR: 0x4f118c0 (libc.so.6:__strchrnul_avx2) redirected to 0x4c3fcb0 (strchrnul)
+--902281-- REDIR: 0x4f14c70 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4c3fdc0 (mempcpy)
+==902281== 
+==902281== HEAP SUMMARY:
+==902281==     in use at exit: 0 bytes in 0 blocks
+==902281==   total heap usage: 263 allocs, 263 frees, 51,710 bytes allocated
+==902281== 
+==902281== All heap blocks were freed -- no leaks are possible
+==902281== 
+==902281== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+============================================================
+Results from buildLog.txt
+Executing grade.sh...
+
+Creating build subdirectory
+
+Extracting student's files to the build directory:
+assembler.c
+assembler.h
+Function.c
+Function.h
+Label.c
+Label.h
+Opcode.c
+Opcode.h
+Register.c
+Register.h
+pledge.txt
+makefile
+
+Invoking:  make assembler
+gcc -c -std=c11 -Wall -W -ggdb3 assembler.c
+In file included from assembler.c:26:
+Label.h:34:61: warning: duplicate ‘const’ declaration specifier [-Wduplicate-decl-specifier]
+ void InsertLabel(const char *const LabelName, const int16_t const Offset);
+                                                             ^~~~~
+assembler.c: In function ‘main’:
+assembler.c:58:14: warning: implicit declaration of function ‘getline’; did you mean ‘getenv’? [-Wimplicit-function-declaration]
+   line_len = getline(&line_buf, &buf_size, In);
+              ^~~~~~~
+              getenv
+assembler.c: In function ‘parseInstruction’:
+assembler.c:178:18: warning: format ‘%i’ expects argument of type ‘int *’, but argument 4 has type ‘int16_t *’ {aka ‘short int *’} [-Wformat=]
+   sscanf(pInstr, "%*s %[^,], %" PRIi16 "", rt, &imm);
+                  ^~~~~~~~~~~~~~                ~~~~
+In file included from Register.h:25,
+                 from assembler.c:22:
+/usr/include/inttypes.h:71:19: note: format string is defined here
+ # define PRIi16  "i"
+assembler.c:228:33: warning: format ‘%i’ expects argument of type ‘int *’, but argument 3 has type ‘int8_t *’ {aka ‘signed char *’} [-Wformat=]
+     int isNumber = sscanf(arg3, "%" PRIi8 "", &imm);
+                                 ^~~           ~~~~
+In file included from Register.h:25,
+                 from assembler.c:22:
+/usr/include/inttypes.h:70:18: note: format string is defined here
+ # define PRIi8  "i"
+assembler.c:273:33: warning: format ‘%i’ expects argument of type ‘int *’, but argument 3 has type ‘int16_t *’ {aka ‘short int *’} [-Wformat=]
+     int isNumber = sscanf(arg3, "%" PRIi16 "", &imm);
+                                 ^~~            ~~~~
+In file included from Register.h:25,
+                 from assembler.c:22:
+/usr/include/inttypes.h:71:19: note: format string is defined here
+ # define PRIi16  "i"
+assembler.c:292:33: warning: format ‘%i’ expects argument of type ‘int *’, but argument 3 has type ‘int16_t *’ {aka ‘short int *’} [-Wformat=]
+     int isNumber = sscanf(arg2, "%" PRIi16 "", &imm);
+                                 ^~~            ~~~~
+In file included from Register.h:25,
+                 from assembler.c:22:
+/usr/include/inttypes.h:71:19: note: format string is defined here
+ # define PRIi16  "i"
+assembler.c: In function ‘FillLabels’:
+assembler.c:591:25: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+       for (int i = 0; i < len; i++)
+                         ^
+gcc -c -std=c11 -Wall -W -ggdb3 Function.c
+gcc -c -std=c11 -Wall -W -ggdb3 Opcode.c
+gcc -c -std=c11 -Wall -W -ggdb3 Register.c
+gcc -c -std=c11 -Wall -W -ggdb3 Label.c
+In file included from Label.c:22:
+Label.h:34:61: warning: duplicate ‘const’ declaration specifier [-Wduplicate-decl-specifier]
+ void InsertLabel(const char *const LabelName, const int16_t const Offset);
+                                                             ^~~~~
+Label.c:57:61: warning: duplicate ‘const’ declaration specifier [-Wduplicate-decl-specifier]
+ void InsertLabel(const char *const LabelName, const int16_t const Offset)
+                                                             ^~~~~
+Label.c: In function ‘InsertLabel’:
+Label.c:62:19: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   next->LabelName = LabelName;
+                   ^
+gcc -o assemble -std=c11 -Wall -W -ggdb3 assembler.o Function.o Opcode.o Register.o Label.o
+
+============================================================
+
